@@ -1,21 +1,87 @@
-import Link from 'next/link'
-import { Button } from '../ui/button'
+"use client"
 
-const LoginForm = () => {
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+
+import { Button } from "@/components/ui/button"
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import Link from "next/link"
+
+
+const formSchema = z.object({
+  email: z.string().min(2, {
+    message: "invalid email",
+  }),
+  password: z.string().min(8, {
+    message: "invalid password"
+  })
+})
+
+export function Login() {
+
+  // 1. Define your form.
+  const form = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "",
+      password: ""
+    },
+  })
+ 
+  // 2. Define a submit handler.
+  function onSubmit(values) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values)
+  }
+
   return (
-    <div>
-        <form className="flex flex-col space-y-4">
-            <header className='text-yellow-600 text-2xl font-bold'>Welcome to Tesfa</header>
-            <label htmlFor="email" className='text-yellow-600'>Email</label>
-            <input type="text" id="username" name="username" className='rounded-md h-10'/>
-            <label htmlFor="password" className='text-yellow-600'>Password</label>
-            <input type="password" id="password" name="password" className='rounded-md h-10' />
-            <Button type="submit">Login</Button>
-            <Link href={'/'}>Register</Link>
-            <Link href={'/dashboard'}>Dashboard</Link>
-        </form>
-    </div>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        {/* Email */}
+        <h1 className="font-semibold text-2xl text-yellow-600">Hello, again!</h1>
+        <FormDescription>
+           Welcome back you've been missed!
+        </FormDescription>
+        <FormField
+          control={form.control}
+          name='email'
+          render={({ email }) => (
+            <FormItem className="sm:w-[300px]">
+              <FormControl>
+                <Input type='email' name='email' placeholder="joseph@example.com" {...email} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        {/* Password */}
+        <FormField
+        control={form.control}
+        name='password'
+        render={({ password }) => (
+          <FormItem>
+            <FormControl>
+                <Input type='password' name='password' placeholder='password' {...password}/>
+              </FormControl>
+              <FormMessage/>
+          </FormItem>
+        )}
+        />
+        <FormItem className='text-right'>
+          <Link href={'#'} className="font-light text-yellow-600">forgot password?</Link>
+        </FormItem>
+        <Button type="submit" className="w-[300px] bg-yellow-600 hover:bg-yellow-700">Login</Button>
+      </form>
+    </Form>
   )
 }
-
-export default LoginForm
