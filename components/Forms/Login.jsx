@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import { Button } from '../ui/button'
 
 const LoginForm = () => {
   return (
@@ -10,7 +10,7 @@ const LoginForm = () => {
             <input type="text" id="username" name="username" className='rounded-md h-10'/>
             <label htmlFor="password" className='text-yellow-600'>Password</label>
             <input type="password" id="password" name="password" className='rounded-md h-10' />
-            <button type="submit" className='bg-yellow-600 rounded-md h-10 text-white'>Login</button>
+            <Button type="submit">Login</Button>
             <Link href={'/'}>Register</Link>
             <Link href={'/dashboard'}>Dashboard</Link>
         </form>
