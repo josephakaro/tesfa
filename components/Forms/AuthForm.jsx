@@ -46,7 +46,7 @@ export function AuthForm({formAction, title, button }) {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form action={ formAction } className="space-y-4">
         {/* Email */}
         <h1 className="font-semibold text-2xl text-yellow-600">{ title }</h1>
         <FormDescription>
@@ -80,7 +80,7 @@ export function AuthForm({formAction, title, button }) {
         <FormItem className='text-right'>
           <Link href={'#'} className="font-light text-yellow-600">forgot password?</Link>
         </FormItem>
-        <Button formAction={ formAction } type="submit" className="w-[300px] bg-yellow-600 hover:bg-yellow-700">{ button }</Button>
+        <Button type="submit" className="w-[300px] bg-yellow-600 hover:bg-yellow-700">{ button }</Button>
       </form>
     </Form>
   )
