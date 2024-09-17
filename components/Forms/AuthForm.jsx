@@ -26,7 +26,7 @@ const formSchema = z.object({
   })
 })
 
-export function Login() {
+export function AuthForm({formAction, title, button }) {
 
   // 1. Define your form.
   const form = useForm({
@@ -48,7 +48,7 @@ export function Login() {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         {/* Email */}
-        <h1 className="font-semibold text-2xl text-yellow-600">Hello, again!</h1>
+        <h1 className="font-semibold text-2xl text-yellow-600">{ title }</h1>
         <FormDescription>
            Welcome back you've been missed!
         </FormDescription>
@@ -80,7 +80,7 @@ export function Login() {
         <FormItem className='text-right'>
           <Link href={'#'} className="font-light text-yellow-600">forgot password?</Link>
         </FormItem>
-        <Button type="submit" className="w-[300px] bg-yellow-600 hover:bg-yellow-700">Login</Button>
+        <Button formAction={ formAction } type="submit" className="w-[300px] bg-yellow-600 hover:bg-yellow-700">{ button }</Button>
       </form>
     </Form>
   )

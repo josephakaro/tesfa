@@ -1,9 +1,14 @@
-import Link from "next/link";
+import { redirect } from 'next/navigation'
 
-export default function Home() {
-  return (
-    <div className="">
-      <Link href={'/auth/login'}>Login</Link>
-    </div>
-  );
+import { createClient } from '@/utils/supabase/server'
+
+export default async function Dashboard() {
+  const supabase = createClient()
+
+  const { data, error } = await supabase.auth.getUser()
+  if (error || !data?.user) {
+    redirect('/login')
+  }
+
+  return <p>Hello {data.user.email}</p>
 }
