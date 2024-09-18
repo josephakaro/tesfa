@@ -2,6 +2,7 @@
 
 import { NextRequest } from "next/server";
 import { createClient } from "../supabase/client";
+import { redirect } from "next/navigation";
 
 export const supabase = createClient()
 
@@ -11,16 +12,14 @@ export const signInWithGoogle = async () => {
     provider: 'google',
   });
   if (error) console.log('Error logging in with Google:', error.message);
+
+  redirect('/')
 };
 
 // Sign out
 export const signOut = async () => {
   const { error } = await supabase.auth.signOut();
   if (error) console.log('Error signing out:', error.message);
-  
-  if(!error) {
-    setTimeout(() => {
-      window.location.reload()
-    }, 100)
-  }
+
+  redirect('/auth/login')
 };
