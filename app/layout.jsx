@@ -12,8 +12,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="h-screen w-full flex items-center justify-center bg-slate-50">{children}</body>
+      <body className="h-screen w-full flex items-center justify-center bg-slate-50">{children}
       <Toaster/>
+      </body>
     </html>
   );
 }

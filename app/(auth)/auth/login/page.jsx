@@ -1,11 +1,14 @@
 import { AuthForm } from '@/components/Forms/AuthForm'
-import Link from 'next/link'
+import AuthButton from '@/components/Buttons/AuthButton';
+import { signInWithGoogle } from '@/utils/func/google';
 import Image from 'next/image'
 
 import { FaGoogle } from "react-icons/fa";
 import { PiMicrosoftOutlookLogoFill } from "react-icons/pi";
 import { BsInstagram } from "react-icons/bs";
 import { login } from '../action';
+import { Button } from '@/components/ui/button';
+
 
 const Login = () => {
   return (
@@ -15,10 +18,8 @@ const Login = () => {
      </div>
      <div className="col-span-1 flex flex-col flex-1 justify-center items-center p-24">
       <AuthForm formAction={ login } title={'Login'} button={'Login'} />
-      <div className='flex flex-row items-stretch justify-between mt-14 sm:w-[250px]'>
-        <Link href="#"  className='text-yellow-600'><FaGoogle className='h-8 w-8'/></Link>
-        <Link href="#"  className='text-yellow-600'><PiMicrosoftOutlookLogoFill className='h-10 w-10'/></Link>
-        <Link href="#" className='text-yellow-600'><BsInstagram className='h-8 w-8'/></Link>
+      <div className='flex flex-row items-stretch justify-between mt-4 sm:w-[300px]'>
+        <AuthButton action={ signInWithGoogle } icon={<FaGoogle className='h-4 w-4' />} text={'Google'} />
       </div>
      </div>
     </div>

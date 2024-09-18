@@ -5,9 +5,13 @@ images: {
       {
         protocol: 'https',
         hostname: 'ripoti.net',
-        port: '',
-        pathname: '/newapp/assets/images/login.jpg',
+        pathname:'/newapp/assets/images/login.jpg'
       },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '/**'
+      }
     ],
   },
 }
