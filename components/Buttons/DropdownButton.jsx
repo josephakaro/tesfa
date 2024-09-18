@@ -16,11 +16,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
+
 export function DropdownButton({ lable }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-          <Button varient="outline">
+          <Button variant='outline'>
             { lable }
           </Button>
       </DropdownMenuTrigger>
@@ -68,11 +69,6 @@ export function DropdownButton({ lable }) {
         <DropdownMenuItem>GitHub</DropdownMenuItem>
         <DropdownMenuItem>Support</DropdownMenuItem>
         <DropdownMenuItem disabled>API</DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          Log out
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )

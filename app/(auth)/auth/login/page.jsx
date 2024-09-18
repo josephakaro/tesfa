@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 
 const Login = () => {
   return (
-    <div className="h-[90vh] w-[90%] grid sm:grid-flow-col gap-4 grid-flow-row grid-cols-2 bg-white rounded-3xl p-4 shadow-sm">
+    <div className="h-[90vh] w-[90%] grid sm:grid-flow-col gap-4 grid-flow-row grid-cols-2 bg-white text-yellow-600 rounded-3xl p-4 shadow-sm">
      <div className="col-span-1 flex justify-center items-center bg-yellow-600 rounded-2xl overflow-hidden">
       <Image src='https://ripoti.net/newapp/assets/images/login.jpg' className="w-full h-full opacity-50" width={1024} height={920} alt='children smile' />
      </div>
