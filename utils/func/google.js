@@ -1,6 +1,5 @@
 "use client"
 
-import { NextRequest } from "next/server";
 import { createClient } from "../supabase/client";
 import { redirect } from "next/navigation";
 

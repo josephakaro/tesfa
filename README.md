@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tesfa
+    **Tesfa** is an ERP and CRM Web Application. It is developed to easy and track ministry activities in and outside Organizations. This project is built using Next.js.
+<br>
 
-## Getting Started
+![Dashboard screenshot](/images/dashboard.png)
+![Login screenshot](/images/login.png)
 
-First, run the development server:
+## Table of Content
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Configuration](#contribution)
+5. [Contribution](#contribution)
+6. [License](#license)
+7. [Acknowledgement](#acknowledgement)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+- **User:** Registration and Role based User management
+- **Reporting:** Report submission and generations through a role based
+- **Consignments:** Consigment of Ministry Activities to a registered partners
+- **Online Library:** Public online library with thousands of ministry programs.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Prerequisites
+Before you begin, ensure to have met the following requirements:
+1. Supabase Account
+- Create account with [supabase](https://supabase.com)
+- Create a supabase project
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2.  Google Cloud Console
+- Create [google cloud console](https://console.cloud.google.com/welcome/new)
+- Create a new project
+- Create a auth consent screen and credentials
 
-## Learn More
+### Setup
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/josephakaro/tesfa.git
+    cd tesfa
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Configure enivronment variables:
+    - Rename `.env.example` to `.env.local` and update the value from supabase
+    ```bash
+    NEXT_PUBLIC_SUPABASE_URL=<YOUR_SUPABASE_URL>
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=<YOUR_SUPABASE_ANON_KEY>
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. Run database migrations:
+    ```bash
+    npx prisma migrate dev
+    ```
 
-## Deploy on Vercel
+5. Start the application:
+    ```bash
+    # This will reload on update with nodmen
+    npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    # This will start the main application and will require manual reload
+    npm start
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Usage
+- **Frontend:** Access the application at [http://localhost:300](http://localhost:3000).
+- **API:** Use the following endpoints to interact with the backend:
+    - **Book Report**
+    - `GET /api/book`: List All book reports
+    - `GET /api/book/[:id]`
+    - `POST /api/book/add`: Create a new Book report
+    - `DELETE /api/book/delete/[:id]`: Delete one book report by ID
+    - `UPDATE /api/book/update/[:id]`: Updates one book report by ID
+
+### Testing:
+To run tests:
+
+    ```bash
+    npm run test
+    ```
+
+## Configuration
+This project uses the following configuration files
+- **.env.local :** Contains enivronment-specific variables
+- **config.json :** Configurations for different environments (development, testing, productions)
+
+Update these files as neccessary to match your enironment settings.
+
+## Contribution
+To Contribute to this project, please follow these steps:
+1. Fork the repository
+2. Create a new feature branch (`git checkout -b feature-brach-name`).
+3. Commit your changes (`git commit -m 'Add some features`).
+4. Push to the branch(`git push origin feature-branch-name`).
+5. Create a new Pull Request
+
+## License
+This project is licensed under the [ONEHOPE License](/LICENSE)
+
+## Acknowledgement
+- **Supabase:** Complete backend resource and Database
+- **Next.js:** Front-end developements
+- **Node.js:** Backend Development
+- **Prisma:** Database ORM mapping
+- **Contributor:** [Joseph Akaro](https://josephakaro.tech)
