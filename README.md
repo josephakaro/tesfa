@@ -1,4 +1,8 @@
-# Tesfa
+# Tesfa 
+![Teafa Logo](/images/tesfa-logo.png)
+
+<br>
+
 **Tesfa** is an ERP and CRM Web Application. It is developed to easy and track ministry activities in and outside Organizations. This project is built using Next.js.
 <br>
 
@@ -20,18 +24,20 @@
 - **Consignments:** Consigment of Ministry Activities to a registered partners
 - **Online Library:** Public online library with thousands of ministry programs.
 
+<br>
+
 ## Installation
 
 ### Prerequisites
 Before you begin, ensure to have met the following requirements:
 1. Supabase Account
-- Create account with [supabase](https://supabase.com)
-- Create a supabase project
+    - Create account with [supabase](https://supabase.com)
+    - Create a supabase project
 
 2.  Google Cloud Console
-- Create [google cloud console](https://console.cloud.google.com/welcome/new)
-- Create a new project
-- Create a auth consent screen and credentials
+    - Create [google cloud console](https://console.cloud.google.com/welcome/new)
+    - Create a new project
+    - Create a auth consent screen and credentials
 
 ### Setup
 1. Clone the repository:
@@ -107,3 +113,7 @@ This project is licensed under the [ONEHOPE License](/LICENSE)
 - **Node.js:** Backend Development
 - **Prisma:** Database ORM mapping
 - **Contributor:** [Joseph Akaro](https://josephakaro.tech)
+
+<br>
+
+[BACK TO TOP](#tesfa)
