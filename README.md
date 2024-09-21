@@ -1,9 +1,9 @@
 # Tesfa
-    **Tesfa** is an ERP and CRM Web Application. It is developed to easy and track ministry activities in and outside Organizations. This project is built using Next.js.
+**Tesfa** is an ERP and CRM Web Application. It is developed to easy and track ministry activities in and outside Organizations. This project is built using Next.js.
 <br>
 
-![Dashboard screenshot](/images/dashboard.png)
 ![Login screenshot](/images/login.png)
+![Dashboard screenshot](/images/dashboard.png)
 
 ## Table of Content
 1. [Features](#features)
