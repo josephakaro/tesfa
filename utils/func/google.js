@@ -10,7 +10,9 @@ export const signInWithGoogle = async () => {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
   });
-  if (error) console.log('Error logging in with Google:', error.message);
+  
+  if (error)
+  redirect('/error')
 
   redirect('/')
 };
@@ -18,7 +20,5 @@ export const signInWithGoogle = async () => {
 // Sign out
 export const signOut = async () => {
   const { error } = await supabase.auth.signOut();
-  if (error) console.log('Error signing out:', error.message);
-
-  redirect('/auth/login')
+  if (error) redirect('/error')
 };

@@ -21,6 +21,8 @@ import { RecentReportTable } from '@/components/Dashboard/RecentReportTable';
 import { ModeToggle } from '@/components/theme/ModeToggle';
 import LogOut from '@/components/Buttons/LogOut';
 
+import { data as report } from '@/data/data';
+import { LibrarySquare, MessageSquareTextIcon } from 'lucide-react';
 
 export default async function Dashboard() {
   const supabase = createClient()
@@ -40,10 +42,12 @@ export default async function Dashboard() {
        <div className='flex flex-col justify-between h-[90%] mt-4'>
        <ul className='overflow-y-auto'>
        <SideMenu url={'/'} icon={<RiDashboardFill />} title={'Dashboard'}/>
-       <SideMenu url={'/'} icon={<FaUser />} title={'Users'}/>
-       <SideMenu url={'/'} icon={<FaHandsHelping />} title={'Partners'}/>
-       <SideMenu url={'/'} icon={<GrAnalytics />} title={'Reports'}/>
-       <SideMenu url={'/'} icon={<FiSettings />} title={'Settings'}/>
+       <SideMenu url={'/user'} icon={<FaUser />} title={'Users'}/>
+       <SideMenu url={'/partner'} icon={<FaHandsHelping />} title={'Partners'}/>
+       <SideMenu url={'/report'} icon={<GrAnalytics />} title={'Reports'}/>
+       <SideMenu url={'/library'} icon={<LibrarySquare />} title={'Library'}/>
+       <SideMenu url={'/community'} icon={<MessageSquareTextIcon />} title={'Community'}/>
+       <SideMenu url={'/setting'} icon={<FiSettings />} title={'Settings'}/>
           
         </ul>
 
@@ -71,10 +75,10 @@ export default async function Dashboard() {
         <div className='flex flex-row flex-1 items-stretch justify-between'>
           <StatusCard icon={<FaBuildingUser  className='h-16 w-16'/>} data={'3.5k'} description={'Users'}/>
           <StatusCard icon={<FaHandsHelping  className='h-16 w-16'/>} data={'5k'} description={'Partners'}/>
-          <StatusCard icon={<GrAnalytics  className='h-16 w-16'/>} data={'90k'} description={'Reports'}/>
+          <StatusCard icon={<GrAnalytics  className='h-16 w-16'/>} data={report.length} description={'Reports'}/>
           <StatusCard icon={<RiPresentationLine  className='h-16 w-16'/>} data={'10k'} description={'Trainings'}/>
         </div>
-        <div className='flex flex-row items-start mt-4 w-full h-[70%]'>
+        <div className='flex flex-row items-start mt-4 w-full min-h-[70%]'>
             <RecentReportTable />
         </div>
       </main>

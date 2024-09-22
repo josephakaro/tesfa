@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        <link rel="png" href="/tesfa-icon.png" />        
+        <link rel="icon" href="/tesfa-icon.png" />        
       </Head>
       <body className="h-screen w-full flex items-center justify-center bg-neutral-200">
       <ThemeProvider
